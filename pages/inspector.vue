@@ -4,7 +4,7 @@
         <div class="ui container">
             <form class="ui form" @submit.prevent="fetchorder">
                 <div class="field">
-                    <label>Enter Order ID</label>
+                    <label>Enter Product ID</label>
                     <input type="text" placeholder="Order ID" v-model="orderid">
                 </div>
                 <button class="ui button" type="submit">Submit</button>

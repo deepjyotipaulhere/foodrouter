@@ -17,6 +17,7 @@
                             <h5 style="color:#777">
                                 Not Verified
                             </h5>
+                            <h2>&#8377; {{price.cost}}</h2>
                             <div class="field">
                                 <label>Deliver to</label>
                                 <select v-model="selectedlocation">
@@ -59,6 +60,7 @@ export default {
     created(){
         this.getproductdetails()
         this.getlocations()
+        this.getprice()
     },
     methods:{
         getlocations(){
@@ -80,6 +82,11 @@ export default {
             }).then(response=>{
                 this.uploaded=true
                 this.orderid=response.data
+            })
+        },
+        getprice(){
+            this.$axios.get("/price").then(response=>{
+                this.price=response.data[0]
             })
         }
     }

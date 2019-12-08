@@ -37,6 +37,7 @@
                             </div>
                             <div class="column" v-else>
                                 <label for="">Upload images</label>
+                                <a class="ui red tag label">Product ID: {{productid}}</a>
                                 <div v-if="complete">
                                     <div class="ui icon message">
                                         <i class="check icon"></i>
