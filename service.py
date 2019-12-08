@@ -232,6 +232,14 @@ def getlocations():
     cur.execute("SELECT * FROM location_details")
     return jsonify(cur.fetchall())
 
+@app.route("/price" , methods=['GET'])
+def price():
+    con = connectmysql()
+    cur=con.cursor()
+    cur.execute("SELECT * FROM pricing_table")
+    return jsonify(cur.fetchall())
+
+
 
 @app.route("/insertorder" , methods=['POST'])
 def insertorder():
